@@ -7,6 +7,22 @@
  */
 const getSumOfTriple = (arr, start, end) => {
   // 请实现……
+	let sum = 0;
+	if( typeof start !== 'undefined' ){
+		//求范围内（开区间） 3 的倍数的数字之和
+		for(let i = 0;i<arr.length;i++){ 
+			if( arr[i] % 3 === 0 && arr[i] > start && arr[i] < end ){
+				sum+=arr[i];
+			}
+		}
+	}else{
+		for(let i = 0;i<arr.length;i++){  
+			if( arr[i] % 3 === 0 ){
+				sum+=arr[i];
+			}
+		}
+	} 
+	return sum;//返回和
 };
 
 // * ---------------- 实现的效果：

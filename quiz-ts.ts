@@ -3,6 +3,13 @@
 
 // * ---------------- 请补充……
 
+    type receive = {
+        userId: number;
+        id: number;
+        title: string;
+        completed: boolean;
+    };
+
 const getData = async () =>
   await fetch('https://jsonplaceholder.typicode.com/todos/').then((response) => response.json());
 

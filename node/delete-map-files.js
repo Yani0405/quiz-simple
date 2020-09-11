@@ -5,6 +5,33 @@
  */
 const deleteMapFiles = (p) => {
   // 请实现……
+  //读文件中路径
+  const fs = require("fs");
+  function delDir(path){
+	  //返回指定目录下所有文件名称的数组对象。
+	  let filesName = fs.readdirSync(path);
+	  let info = fs.statSync(path+"/"+ ele)	
+	  //如果path是一个目录则返回true。
+	  if(info.isDirectory()){
+	                readDirSync(p+"/"+ ele);
+	            }else{        
+	                let reg = RegExp(/\.map$/);
+					//删除文件操作
+	                if(ele.match(reg)){
+	                    fs.unlink(p+"/"+ele, function(err){
+	                        if(err){
+	                         throw err;
+	                        }
+	                        console.log('文件:'+ ele +'删除成功！');
+	                    })    
+	                }
+	            }	
+	        })
+	    }
+	    readDirSync(path);
+	  };
+	  
+	  deleteMapFiles('./playground');
 };
 
 // * ------------------------------------------------

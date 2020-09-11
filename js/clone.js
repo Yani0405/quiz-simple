@@ -3,8 +3,21 @@
 
 // * ---------------- 解决下文中缺少 clone 函数的问题……
 // 在这里写代码……
-
-// * ---------------- 实现的效果：
+function clone(oldData){
+			var newData = {};
+			for(let i in oldData){
+				//判断是否为对象 
+				if(  typeof oldData =="object"){
+					newData[i] = clone(oldData[i]);
+					
+				}else{
+					
+					newData[i] = oldData[i];
+				}
+			}
+			return newData;
+		}
+// * ---------------- 实现的效果：true true
 
 {
   const data = {
